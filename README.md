@@ -35,7 +35,11 @@
 
 **Orchestration:** Windows Task Scheduler → `run_pipeline.bat` → daily at 06:30 IST
 ---
+## Pipeline Execution
+![Pipeline Execution Log](screenshots/pipeline_execution.png)
+> Bronze layer ingests 496 rows per stock (TCS, Infosys, Reliance, HDFC Bank, Wipro) plus 493 rows for Nifty 50 benchmark. dbt then builds 4 models — silver_stocks, fact_stocks, fact_nifty, dim_company — completing the full Silver + Gold transformation in under 1 second.
 
+---
 ## Tech Stack
 
 | Layer | Tool | Purpose |
