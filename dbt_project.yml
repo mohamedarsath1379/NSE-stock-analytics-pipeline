@@ -1,0 +1,23 @@
+# ============================================================
+# dbt_project.yml
+# PUT THIS IN: dbt_project/ folder
+# ============================================================
+
+name: 'stock_market'
+version: '1.0.0'
+config-version: 2
+
+profile: 'stock_market'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  stock_market:
+    silver:
+      +materialized: table
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold
