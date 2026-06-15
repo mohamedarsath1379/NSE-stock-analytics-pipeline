@@ -1,8 +1,13 @@
 # NSE Stock Market Analytics Pipeline
+### Automated Daily Pipeline | Medallion Architecture | Python + dbt + PostgreSQL + Power BI
 
-**End-to-end automated data pipeline for Indian equity market analysis — built on Medallion Architecture.**
+![Python](https://img.shields.io/badge/Python-3.8-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![PowerBI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![dbt](https://img.shields.io/badge/dbt-Core-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Window_Functions-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![ETL](https://img.shields.io/badge/ETL-Medallion_Architecture-27AE60?style=for-the-badge)
 
-Python extracts. dbt transforms. PostgreSQL stores. Power BI visualises. Task Scheduler runs it daily without manual intervention.
 
 ---
 
@@ -17,19 +22,18 @@ Python extracts. dbt transforms. PostgreSQL stores. Power BI visualises. Task Sc
 ## Architecture
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌─────────────┐
-│   yfinance  │────▶│   Bronze     │────▶│   Silver     │────▶│    Gold     │
-│   API       │     │   Raw ingest │     │   Cleaned    │     │  Analytics  │
-│             │     │   PostgreSQL │     │   PostgreSQL │     │  PostgreSQL │
-└─────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
-     Python              extract.py           dbt models          dbt models
-                                           silver_stocks      fact_stocks
-                                                              fact_nifty
-                                                              dim_company
+┌─────────────┐     ┌──────────────┐     ┌──────────────┐     ┌─────────────┐     ┌─────────────┐
+│   yfinance  │────▶│   Bronze     │────▶│   Silver     │────▶│    Gold     │────▶│   Power BI  │
+│   API       │     │   Raw ingest │     │   Cleaned    │     │  Analytics  │     │  Dashboard  │
+│             │     │   PostgreSQL │     │   PostgreSQL │     │  PostgreSQL │     │             │
+└─────────────┘     └──────────────┘     └──────────────┘     └─────────────┘     └─────────────┘
+     Python              extract.py          dbt models           dbt models          StockDashboard
+                                           silver_stocks         fact_stocks              .pbix
+                                                                 fact_nifty
+                                                                 dim_company
 ```
 
 **Orchestration:** Windows Task Scheduler → `run_pipeline.bat` → daily at 06:30 IST
-
 ---
 
 ## Tech Stack
@@ -250,6 +254,16 @@ Task Scheduler → Create Basic Task
 
 ---
 
-## License
+---
 
-MIT
+## 🔗 Connect With Me
+
+> Built as part of my Data Analytics Portfolio
+>
+> **Mohamed Arsath A**
+> Data Analyst | Python | SQL | PostgreSQL | Power BI | dbt | ETL Pipeline
+
+- LinkedIn: [Mohamed Arsath A](https://www.linkedin.com/in/mohamedarsath007)
+- GitHub: [mohamedarsath1379](https://github.com/mohamedarsath1379)
+
+---
