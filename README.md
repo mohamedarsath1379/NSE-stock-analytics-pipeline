@@ -13,7 +13,7 @@
 
 ## Dashboard
 
-![NSE Stock Market Analytics Dashboard](powerbi/dashboard_preview.png)
+![NSE Stock Market Analytics Dashboard](dashboard_preview.png)
 
 > One-page Power BI dashboard tracking TCS, Infosys, Reliance, HDFC Bank, and Wipro against the Nifty 50 benchmark. Signals, moving averages, volatility, and correlation updated daily.
 
@@ -36,7 +36,7 @@
 **Orchestration:** Windows Task Scheduler → `run_pipeline.bat` → daily at 06:30 IST
 ---
 ## Pipeline Execution
-![Pipeline Execution Log](screenshots/pipeline_execution.png)
+![Pipeline Execution Log](pipeline_execution.png)
 > Bronze layer ingests 496 rows per stock (TCS, Infosys, Reliance, HDFC Bank, Wipro) plus 493 rows for Nifty 50 benchmark. dbt then builds 4 models — silver_stocks, fact_stocks, fact_nifty, dim_company — completing the full Silver + Gold transformation in under 1 second.
 
 ---
